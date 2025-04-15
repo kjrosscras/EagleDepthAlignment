@@ -1,4 +1,4 @@
-Replace distorted timestamped JPEG with your own. Update undstort.py with your image name then run. 
+Replace distorted timestamped JPEG with your own. Update undistort.py with your image name then run. 
 
 Replace calib.json , recalculate_pose , and add your own recalculate_result.las.
 
