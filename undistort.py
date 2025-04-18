@@ -10,7 +10,7 @@ K = np.array(calib["camera_info"]["front"]["K"]).reshape(3, 3)
 D = np.array(calib["camera_info"]["front"]["coeff"])[:4]  # fisheye uses 4 params max
 
 # === LOAD IMAGE ===
-img = cv2.imread("1744400622.613818.jpg")
+img = cv2.imread("1744400797.288533.jpg")
 h, w = img.shape[:2]
 
 # === UNDISTORT ===
