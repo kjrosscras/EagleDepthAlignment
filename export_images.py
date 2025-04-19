@@ -60,7 +60,7 @@ for filename in sorted(os.listdir(IMG_FOLDER)):
     row = poses.loc[closest_idx]
 
     # === EXTRACT POSE ===
-    pos_interp = np.array([-row['x'], row['y'], row['z']])
+    pos_interp = np.array([-row['x'], -row['y'], -row['z']])
     rot_interp = R.from_quat([-row['qw'], -row['qx'], -row['qy'], row['qz']])
 
 
