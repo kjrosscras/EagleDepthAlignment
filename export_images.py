@@ -41,7 +41,7 @@ T_camera_to_lidar = np.array(calib["out_put"][CAMERA_NAME]["transform_matrix"])
 
 # === LOAD POSES ===
 poses = pd.read_csv(POSE_CSV, header=None, delim_whitespace=True)
-poses.columns = ['timestamp', 'x', 'y', 'z', 'qw', 'qx', 'qy', 'qz']
+poses.columns = ['timestamp', 'x', 'y', 'z', 'qx', 'qy', 'qz', 'qw']
 poses['timestamp'] = poses['timestamp'].astype(float)
 
 # === LOOP OVER IMAGES ===
@@ -61,7 +61,8 @@ for filename in sorted(os.listdir(IMG_FOLDER)):
 
     # === EXTRACT POSE ===
     pos_interp = np.array([-row['x'], -row['y'], -row['z']])
-    rot_interp = R.from_quat([-row['qw'], -row['qx'], -row['qy'], row['qz']])
+    rot_interp = R.from_quat([-row['qx'], -row['qy'], -row['qz'], row['qw']])
+
 
 
 
